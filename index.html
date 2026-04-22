@@ -5,6 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        .more-text {
+            display: none;
+        }
+
+        .btn-lermais {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            background: #1e1e1e;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-lermais:hover {
+            background: #333;
+        }
+    </style>
 </head>
 
 <body>
@@ -44,11 +64,14 @@
                 <h2>Sobre a Empresa</h2>
             </header>
             <div class="content">
-                <p>A Campolina Transportes atua no segmento de transporte executivo, oferecendo soluções completas para deslocamento de passageiros com foco em qualidade, segurança e eficiência operacional.</p>
+                <p>A Campolina Transportes atua no segmento de transporte executivo, oferecendo soluções completas para deslocamento de passageiros.</p>
 
-                <p>Nossa operação é estruturada para atender clientes corporativos e particulares, garantindo alto padrão de atendimento, veículos em excelente estado de conservação e profissionais qualificados.</p>
+                <div class="more-text">
+                    <p>Nossa operação é estruturada para atender clientes corporativos e particulares, garantindo alto padrão de atendimento.</p>
+                    <p>Trabalhamos com planejamento logístico, controle de horários e acompanhamento das viagens.</p>
+                </div>
 
-                <p>Trabalhamos com planejamento logístico, controle de horários e acompanhamento das viagens, assegurando pontualidade e confiabilidade em todos os serviços prestados.</p>
+                <button class="btn-lermais">Ler mais</button>
             </div>
         </article>
     </div>
@@ -65,12 +88,18 @@
                 <ul>
                     <li>Fretamento contínuo e eventual</li>
                     <li>Transporte para eventos corporativos e sociais</li>
-                    <li>Transfer para aeroportos e hotéis</li>
-                    <li>Transporte executivo sob demanda</li>
-                    <li>Atendimento a empresas com contratos personalizados</li>
                 </ul>
 
-                <p>Os serviços são realizados com veículos revisados, climatizados e conduzidos por motoristas experientes, garantindo segurança e conforto aos passageiros.</p>
+                <div class="more-text">
+                    <ul>
+                        <li>Transfer para aeroportos e hotéis</li>
+                        <li>Transporte executivo sob demanda</li>
+                        <li>Atendimento a empresas com contratos personalizados</li>
+                    </ul>
+                    <p>Os serviços são realizados com veículos revisados, climatizados e motoristas experientes.</p>
+                </div>
+
+                <button class="btn-lermais">Ler mais</button>
             </div>
         </article>
     </div>
@@ -84,9 +113,14 @@
                 <h2>Área de Atuação</h2>
             </header>
             <div class="content">
-                <p>A Campolina Transportes atende toda a cidade de São Paulo e região metropolitana, com disponibilidade para viagens intermunicipais e interestaduais mediante agendamento prévio.</p>
+                <p>Atendemos toda a cidade de São Paulo e região metropolitana.</p>
 
-                <p>Nosso atendimento é estruturado para oferecer flexibilidade logística, adaptando-se às necessidades específicas de cada cliente.</p>
+                <div class="more-text">
+                    <p>Também realizamos viagens intermunicipais e interestaduais mediante agendamento.</p>
+                    <p>Nosso atendimento é flexível e adaptado às necessidades de cada cliente.</p>
+                </div>
+
+                <button class="btn-lermais">Ler mais</button>
             </div>
         </article>
     </div>
@@ -101,12 +135,17 @@
             </header>
             <div class="content">
 
-                <p><strong>Razão Social:</strong> Campolina Transportes</p>
-                <p><strong>CNPJ:</strong> 48.244.144/0001-10</p>
-                <p><strong>Email:</strong> locadoracampolina@gmail.com</p>
-                <p><strong>WhatsApp:</strong> (11) 95982-8986</p>
+                <p><strong>Campolina Transportes</strong></p>
 
-                <br>
+                <div class="more-text">
+                    <p><strong>CNPJ:</strong> 48.244.144/0001-10</p>
+                    <p><strong>Email:</strong> locadoracampolina@gmail.com</p>
+                    <p><strong>WhatsApp:</strong> (11) 95982-8986</p>
+                </div>
+
+                <button class="btn-lermais">Ler mais</button>
+
+                <br><br>
 
                 <a href="https://wa.me/5511959828986?text=Solicito%20informações%20e%20orçamento%20para%20serviço%20de%20transporte"
                    class="button alt" target="_blank">
@@ -117,6 +156,8 @@
         </article>
     </div>
 </section>
+
+<!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
@@ -124,6 +165,21 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
+<script>
+document.querySelectorAll('.btn-lermais').forEach(button => {
+    button.addEventListener('click', () => {
+        const moreText = button.previousElementSibling;
+
+        if (moreText.style.display === "block") {
+            moreText.style.display = "none";
+            button.innerText = "Ler mais";
+        } else {
+            moreText.style.display = "block";
+            button.innerText = "Ler menos";
+        }
+    });
+});
+</script>
+
 </body>
 </html>
-

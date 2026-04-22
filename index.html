@@ -5,6 +5,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        .texto-expandivel {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+        }
+
+        .texto-expandivel.aberto {
+            display: block;
+            -webkit-line-clamp: unset;
+            overflow: visible;
+        }
+
+        .btn-ler-mais {
+            margin-top: 1rem;
+            background: transparent;
+            border: none;
+            color: #0b5ed7;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0;
+            text-decoration: underline;
+        }
+
+        .btn-ler-mais:hover {
+            opacity: 0.8;
+        }
+
+        .rodape-empresa {
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 1.2rem 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .rodape-empresa p {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,11 +86,12 @@
             <header>
                 <h2>Sobre a Empresa</h2>
             </header>
-            <div class="content">
+            <div class="content texto-expandivel">
                 <p>A Campolina Transportes atua no segmento de transporte executivo, oferecendo soluções completas para deslocamento de passageiros com foco em qualidade, segurança e eficiência operacional.</p>
                 <p>Nossa operação é estruturada para atender clientes corporativos e particulares, garantindo alto padrão de atendimento, veículos em excelente estado de conservação e profissionais qualificados.</p>
                 <p>Trabalhamos com planejamento logístico, controle de horários e acompanhamento das viagens, assegurando pontualidade e confiabilidade em todos os serviços prestados.</p>
             </div>
+            <button class="btn-ler-mais" onclick="toggleTexto(this)">Ler mais</button>
         </article>
     </div>
 </section>
@@ -59,16 +103,17 @@
             <header>
                 <h2>Serviços</h2>
             </header>
-            <div class="content">
+            <div class="content texto-expandivel">
                 <ul>
                     <li>Fretamento contínuo e eventual</li>
-                    <li>Transporte para eventos corporativos </li>
+                    <li>Transporte para eventos corporativos</li>
                     <li>Transfer para aeroportos e hotéis</li>
                     <li>Transporte executivo sob demanda</li>
                     <li>Atendimentos a empresas personalizados</li>
                 </ul>
                 <p>Os serviços são realizados com veículos revisados, climatizados e conduzidos por motoristas experientes, garantindo segurança e conforto aos passageiros.</p>
             </div>
+            <button class="btn-ler-mais" onclick="toggleTexto(this)">Ler mais</button>
         </article>
     </div>
 </section>
@@ -80,10 +125,11 @@
             <header>
                 <h2>Área de Atuação</h2>
             </header>
-            <div class="content">
+            <div class="content texto-expandivel">
                 <p>A Campolina Transportes atende toda a cidade de São Paulo e região metropolitana, com disponibilidade para viagens intermunicipais e interestaduais mediante agendamento prévio.</p>
                 <p>Nosso atendimento é estruturado para oferecer flexibilidade logística, adaptando-se às necessidades específicas de cada cliente.</p>
             </div>
+            <button class="btn-ler-mais" onclick="toggleTexto(this)">Ler mais</button>
         </article>
     </div>
 </section>
@@ -96,7 +142,6 @@
                 <h2>Contato</h2>
             </header>
             <div class="content">
-
                 <p><strong>Razão Social:</strong> Campolina Transportes</p>
                 <p><strong>CNPJ:</strong> 48.244.144/0001-10</p>
                 <p><strong>Email:</strong> locadoracampolina@gmail.com</p>
@@ -108,11 +153,29 @@
                    class="button alt" target="_blank">
                    Solicitar orçamento via WhatsApp
                 </a>
-
             </div>
         </article>
     </div>
 </section>
+
+<footer class="rodape-empresa">
+    <p>Campolina Transportes - CNPJ: 48.244.144/0001-10 - Email: locadoracampolina@gmail.com - WhatsApp: (11) 95982-8986 ® Campolina Transportes – Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    function toggleTexto(botao) {
+        const conteudo = botao.previousElementSibling;
+
+        conteudo.classList.toggle('aberto');
+
+        if (conteudo.classList.contains('aberto')) {
+            botao.textContent = 'Ler menos';
+        } else {
+            botao.textContent = 'Ler mais';
+        }
+    }
+</script>
+
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
@@ -122,4 +185,3 @@
 
 </body>
 </html>
-
